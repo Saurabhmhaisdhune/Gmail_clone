@@ -3,7 +3,7 @@ import Tabss from './Tabss';
 import Navbar from './Navbar';
 import SideBar from './SideBar';
 import Compose from './Compose';
-import {Route, Routes, Navigate } from 'react-router-dom';
+import {Route, Routes } from 'react-router-dom';
 import MailBox from './MailBox';
 import Authentication from './Authentication';
 
@@ -15,22 +15,14 @@ function Home() {
   return (
     <>
     <Navbar setOpen={setOpen}/>
-
     <div className='flexitem'>
-
-    <SideBar open={open}
-    setShow={setShow}/>
-
+    <SideBar open={open} setShow={setShow}/>
     <Routes>
              <Route path='/login' element={<Authentication/>}/>
              <Route path='/' element={<Tabss/>}/>
              <Route path='/mailbox/:name' element={<MailBox/>}/>
-             
     </Routes>
-
-    <Compose show={show}
-    setShow={setShow}/>
-    
+    <Compose show={show} setShow={setShow}/>
     </div>
     </>
   );

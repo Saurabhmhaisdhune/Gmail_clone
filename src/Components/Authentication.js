@@ -26,8 +26,8 @@ function Authentication() {
           "Content-type": "application/json"
         }})
         .then(()=>setDataa(initialValue));
-        navigate("/")
-        const user = localStorage.setItem("user");
+        navigate("/");
+        // const user = localStorage.setItem("user");
     };
   
   return (

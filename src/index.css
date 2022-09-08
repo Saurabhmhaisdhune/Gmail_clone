@@ -476,25 +476,65 @@ width: 300px;
 .mailbox-top-icons{
     display: flex;
     flex-direction: row;
+    margin: 15px;
 }
 .sider-menu-iconn{
     margin: 15px;
-    font-size: large;
+    font-size: larger;
 }
 .avtarpics{
-    width: 25px;
-    height: 25px;
-}
-.main-mailbox{
-    display: flex;
-    flex-direction: column;
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
 }
 .mailbox-img-name{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: smaller;
+    color: #6a6a6a;
+    margin-left: -100px;
+    position: relative;
+    top: 40px;
+    left: -130px;
 }
 .mailbox-subject{
     font-size: 30px;
     margin: 20px 0px 20px 80px;
+}
+.mailbox-mail{
+    position: relative;
+    top: 100px;
+    left: 80px;
+}
+.mailbox-button{
+    background-color: white;
+    font-size:15px;;
+    color: #282828;
+    border: 1px solid  #282828;
+    width: 110px;
+    height: 40px;
+    border-radius: 18px;
+    gap: 10px;
+}
+.sidebar-menu-buttonss:hover .tooltip-texts{
+    visibility: visible;
+}
+.tooltip-textss{
+    visibility: hidden;
+    background-color: #000000;
+    color: white;
+    border-radius: 10px;
+    width: 35px;
+    height: 15px;
+}
+.main-mailbox{
+    width: 600px;
+}
+.main-mailbox-button{
+    position: relative;
+    top: 200px;
+    display: flex;
+    gap: 20px;
+    left: 80px;
 }

@@ -42,7 +42,7 @@ function SideBar(props) {
             <CgInbox className='sider-menu-icon'/><label className='sidebar-menu-label'>Inbox</label>
             <span className='tooltip-texts'>Inbox</span>
           </li>
-          <li className='sidebar-menu-buttons' onClick={()=>{navigate('/mailbox');}}>
+          <li className='sidebar-menu-buttons' onClick={()=>{navigate('#');}}>
             <AiOutlineStar className='sider-menu-icon'/><label className='sidebar-menu-label'>Starred</label>
             <span className='tooltip-texts'>Starred</span>
           </li>
