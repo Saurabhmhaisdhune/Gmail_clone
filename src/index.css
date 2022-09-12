@@ -265,6 +265,7 @@ width: 300px;
 .tabs-icon{
     font-size: 20px;
     margin: 10px 10px;
+    margin-left: 15px;
 }
 .tabs-text{
     font-size: 14px;
@@ -413,12 +414,11 @@ width: 300px;
 .main-input-div{
     height: 500px;
     width: 400px;
-    box-shadow: 2px 2px 3px 2px rgba(128, 128, 128, 0.85);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: rgb(227, 227, 227);
     padding: 20px;
     text-align: center;
     margin-top: 20px;
-    margin-left: 740px;
 }
 .google-pic{
     width: 170px;
@@ -426,7 +426,7 @@ width: 300px;
     text-align: center;
 }
 .sign-in-email,.sign-in-password{
-    width: 100%;
+    width: 390px;
     height: 40px;
     margin-top: 2px;
     font-size: medium;
@@ -456,10 +456,11 @@ width: 300px;
     background-color: #4089ff;
     color: #000000;
 }
-.authentication-0{
+.authentication{
     text-align: center;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-top: 50px;
 }
 .checkbox-sign{

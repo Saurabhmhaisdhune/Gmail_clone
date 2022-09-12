@@ -1,83 +1,103 @@
-import React from 'react'
-import { useState } from 'react'
-import google from '../Google.png';
-import avtar from '../avtar.png';
-import axios from 'axios';
-import { useNavigate} from "react-router-dom";
+import React, { useState } from "react";
+import google from "../Google.png";
+import avtar from "../avtar.png";
+import { useNavigate } from "react-router-dom";
+import {useFormik} from 'formik';
 
-let initialValue={
-  username:"",
-  password:""
-}
 function Authentication() {
-  const navigate=useNavigate();
-  const[dataa,setDataa]=useState(initialValue);
+  const navigate = useNavigate();
+  const [submitbtn,setSubmitbtn]=useState('Sign in');
+ 
 
-    const handleChange=(e)=>{
-      setDataa({ ...dataa, [e.target.name]: e.target.value});
-    };
+  const formik=useFormik({
+    initialValues:{username:"",password:""},
+    onSubmit:(userDetails)=>{
+      console.log("onSubmit", userDetails);
+      login(userDetails);
+    }
+  });
 
-    const handleSubmit=()=>{
-      axios
-      .post("https://gmailclon.herokuapp.com/users/login",
-      JSON.stringify(dataa),
-      {
-        headers:{
-          "Content-type": "application/json"
-        }})
-        .then(()=>setDataa(initialValue));
-        navigate("/");
-        // const user = localStorage.setItem("user");
-    };
-  
+  const login = async (userDetails) => {
+  const data=await fetch("https://gmailclon.herokuapp.com/users/login",{
+      method:'POST',
+      headers: {
+        "Content-type": "application/json",
+      },
+      body:JSON.stringify(userDetails),
+    });
+   
+      if(data.status === 401) {
+        setSubmitbtn("Retry");
+        alert("Invalid Credentials");
+      } else{
+      const user = await data.json();
+      console.log(user.token);
+      localStorage.setItem("token",user.token);
+      navigate("/home");
+  }
+};
+
+
   return (
-    <div className='authentication'>
-        <div className='authentication-0'>
-        <div className='authentication-1'>
-    <img src={google} alt='google' className='google-pic'/><br/>
-    <label className='text1'>Once account. All of Google</label><br/>
-    <label className='text2'>Login to open to Gmail</label><br/>
-    </div>
-    <div className='main-input-div'>
-        <img src={avtar} alt='avtar' className='avtar-pic'/><br/>
+    <div className="authentication">
+      <div>
+        <img src={google} alt="google" className="google-pic" />
+        <br />
+        <label className="text1">One account. All of Google</label>
+        <br />
+        <label className="text2">Sign in to open the Gmail</label>
+        <br />
+
+      <div className="main-input-div">
+        <img src={avtar} alt="avtar" className="avtar-pic" />
+        <br />
+        <form onSubmit={formik.handleSubmit}>
 
         <input
-        type='email'
-        placeholder='Email'
-        onChange={handleChange}
-        className='sign-in-email'
-        name='username'/><br/>
+          type="text"
+          placeholder="Email"
+          onChange={formik.handleChange}
+          value={formik.values.username}
+          className="sign-in-email"
+          name="username"
+        />
+        <br />
 
         <input
-        type='password'
-        placeholder='Password'
-        onChange={handleChange}
-        className='sign-in-password'
-        name='password'/><br/>
+          type="password"
+          placeholder="Password"
+          onChange={formik.handleChange}
+          value={formik.values.password}
+          className="sign-in-password"
+          name="password"
+        />
+        <br />
 
-        <button
-        className='login-button'
-        onClick={handleSubmit}>
-        Login
-        </button><br/>
+        <button type='submit' className="login-button">
+        {submitbtn}
+        </button>
+        <br />
+        </form>
 
-        <div className='checkbox-sign'>
-        <div>
-        <input
-        type='checkbox'
-        className='sign-in-checkbox'/>
+        <div className="checkbox-sign">
+          <div>
+            <input type="checkbox" className="sign-in-checkbox" />
 
-        <label>Stay signed in</label>
+            <label>Stay signed in</label>
+          </div>
+
+          <div>
+            <a href="https://support.google.com/mail/?hl=en#topic=7065107">
+              Need help
+            </a>
+          </div>
         </div>
-        <div><a href='https://support.google.com/mail/?hl=en#topic=7065107'>Need help</a></div>
-       </div>
-       </div>
-       
+      </div>
 
-    <h3 onClick={()=>navigate('/signup')}>Create an account</h3>
+      <h3 onClick={() => navigate("/signup")}>Create an account</h3>
     </div>
     </div>
-  )
+  );
 }
 
-export default Authentication
+export default Authentication;

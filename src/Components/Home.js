@@ -1,14 +1,13 @@
-import {useState} from 'react';
+import { useState} from 'react';
 import Tabss from './Tabss';
 import Navbar from './Navbar';
 import SideBar from './SideBar';
 import Compose from './Compose';
-import {Route, Routes } from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 import MailBox from './MailBox';
-import Authentication from './Authentication';
-
 
 function Home() {
+
   const [open,setOpen]=useState(true);
   const [show,setShow]=useState(false);
 
@@ -18,7 +17,6 @@ function Home() {
     <div className='flexitem'>
     <SideBar open={open} setShow={setShow}/>
     <Routes>
-             <Route path='/login' element={<Authentication/>}/>
              <Route path='/' element={<Tabss/>}/>
              <Route path='/mailbox/:name' element={<MailBox/>}/>
     </Routes>
@@ -29,12 +27,3 @@ function Home() {
 }
 
 export default Home;
-// export function ProtectedRoute(props) {
-//   const user = localStorage.getItem("user");
-
-//   if (!user) {
-//    return <Navigate to="/login" />;
-//   } else {
-//    return <Route {...props} />;
-//   }
-// }

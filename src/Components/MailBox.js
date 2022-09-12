@@ -12,30 +12,23 @@ import {BsArrow90DegRight} from 'react-icons/bs';
 import { useNavigate, useParams } from "react-router-dom";
 import avtar from "../avtar.png";
 
-let initialValue = {
-  name: "",
-  subject: "",
-  mail: "",
-};
-
 function MailBox() {
   const navigate = useNavigate();
   const { name } = useParams();
   console.log(name);
 
-  const [mails, setMails] = useState(initialValue);
+  const [mails, setMails] = useState();
 
   const getdata = () => {
-    fetch("https://gmailclon.herokuapp.com/gmail_data/" + name)
-      .then((responce) => responce.json())
-      .then((data) => {
-        setMails(data[0]);
-        console.log(data);
-      });
+    fetch('https://gmailclon.herokuapp.com/gmail_data/'+name)
+    .then((responce)=>responce.json())
+    .then((data) => {setMails(data[0]);
+      console.log(data);
+    });
   };
   useEffect(() => {
     getdata();
-  }, []);
+  });
 
   return (
     <div className="main-mailbox">

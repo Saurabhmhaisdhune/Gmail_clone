@@ -58,24 +58,23 @@ export default function Tabss() {
         <span className='tooltip-texts'>More</span>
     </div>
   </div>
-    <Box sx={{ width: '1450px',
+    <Box sx={{ width:'1400px',
      typography: 'body1'
      }}>
       <TabContext value={value}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider', }}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList onChange={handleChange} aria-label="lab API tabs example">
 
             <CgInbox className='tabs-icon'/>
-            <Tab sx={{ textTransform:"capitalize",
-            fontFamily: "Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif"}}
+            <Tab sx={{ textTransform:"capitalize",width:'190px'}}
             label="Primary" value="1" />
 
             <BsTag className='tabs-icon'/>
-            <Tab sx={{ textTransform:"capitalize"}}
+            <Tab sx={{ textTransform:"capitalize",width:'190px'}}
             label="Promotions" value="2" />
 
             <FiUsers className='tabs-icon'/>
-            <Tab sx={{ textTransform:"capitalize"}}
+            <Tab sx={{ textTransform:"capitalize",width:'190px'}}
             label="Social" value="3" />
 
           </TabList>
