@@ -58,7 +58,7 @@ export default function Tabss() {
         <span className='tooltip-texts'>More</span>
     </div>
   </div>
-    <Box sx={{ width:'1400px',
+    <Box sx={{ maxWidth:'1400px',
      typography: 'body1'
      }}>
       <TabContext value={value}>

@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 let initialValue = {
+  name:"",
   username: "",
   password: "",
 };
@@ -50,6 +51,15 @@ function Signup() {
 
         <input
           type="text"
+          onChange={handleChange}
+          placeholder="Full name"
+          className="sign-in-email"
+          name="name"
+        />
+        <br />
+
+        <input
+          type="email"
           onChange={handleChange}
           placeholder="Email"
           className="sign-in-email"

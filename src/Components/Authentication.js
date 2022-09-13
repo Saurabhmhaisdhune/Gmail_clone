@@ -54,7 +54,7 @@ function Authentication() {
         <form onSubmit={formik.handleSubmit}>
 
         <input
-          type="text"
+          type="email"
           placeholder="Email"
           onChange={formik.handleChange}
           value={formik.values.username}
@@ -94,7 +94,7 @@ function Authentication() {
         </div>
       </div>
 
-      <h3 onClick={() => navigate("/signup")}>Create an account</h3>
+      <h3 onClick={() => navigate("/signup")} className="create-account">Create a new account</h3>
     </div>
     </div>
   );
