@@ -40,9 +40,6 @@ function SideBar(props) {
             <div className="sidebar-menu">
               <li
                 className="sidebar-menu-buttons"
-                onClick={() => {
-                  navigate("/");
-                }}
               >
                 <CgInbox className="sider-menu-icon" />
                 <label className="sidebar-menu-label">Inbox</label>
@@ -50,9 +47,6 @@ function SideBar(props) {
               </li>
               <li
                 className="sidebar-menu-buttons"
-                onClick={() => {
-                  navigate("#");
-                }}
               >
                 <AiOutlineStar className="sider-menu-icon" />
                 <label className="sidebar-menu-label">Starred</label>
