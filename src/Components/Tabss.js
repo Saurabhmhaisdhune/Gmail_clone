@@ -18,7 +18,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-export default function Tabss({setSelectedmail}) {
+export default function Tabss({ setSelectedmail }) {
   const navigate = useNavigate();
   const [value, setValue] = useState("1");
 
@@ -28,13 +28,13 @@ export default function Tabss({setSelectedmail}) {
     setValue(newValue);
   };
   const getData = () => {
-    fetch("https://gmailclon.herokuapp.com/gmail_data")
+    fetch("https://gmail-clone-xbb8.onrender.com/gmail_data")
       .then((response) => response.json())
       .then((data) => setMails(data));
   };
   const handleDelete = (name) => {
     axios
-      .delete("https://gmailclon.herokuapp.com/gmail_data/" + name)
+      .delete("https://gmail-clone-xbb8.onrender.com/gmail_data/" + name)
       .then((data) => getData());
   };
   useEffect(() => {

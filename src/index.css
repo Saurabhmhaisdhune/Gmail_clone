@@ -92,6 +92,31 @@ width: 300px;
     outline: none;
  
 }
+@media screen and (max-width: 430px) {
+    .searchbar-item{
+        width: 100px;
+    }
+    .menu-gmail{
+        display: flex;
+        align-items: center;
+    }
+    .menu-button{
+        font-size: small;
+    }
+    .gmail-img{
+        width: 70px;
+    }
+    .top-right-content{
+        visibility: hidden;
+    }
+    .sidebar{
+        visibility: hidden;
+    }
+    /* .sidebar-menu-buttonss{
+        visibility: hidden;
+    } */
+
+}
 
 .navbar{
     display: flex;
@@ -542,4 +567,8 @@ width: 300px;
 .create-account:hover{
     cursor: pointer;
     color: #505050;
+}
+.mailbox-button:hover{
+    cursor: pointer;
+    background-color: rgb(235, 235, 235);
 }
