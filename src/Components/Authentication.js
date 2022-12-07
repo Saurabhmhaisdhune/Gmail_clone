@@ -12,7 +12,6 @@ function Authentication() {
   const formik=useFormik({
     initialValues:{username:"",password:""},
     onSubmit:(userDetails)=>{
-      console.log("onSubmit", userDetails);
       login(userDetails);
     }
   });
