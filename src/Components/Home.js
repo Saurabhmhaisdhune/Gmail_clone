@@ -3,7 +3,6 @@ import Tabss from "./Tabss";
 import Navbar from "./Navbar";
 import SideBar from "./SideBar";
 import Compose from "./Compose";
-import { Route, Routes } from "react-router-dom";
 import MailBox from "./MailBox";
 
 function Home() {

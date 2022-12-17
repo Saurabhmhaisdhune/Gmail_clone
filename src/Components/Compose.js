@@ -29,7 +29,8 @@ function Compose(props) {
           },
         }
       )
-      .then(() => setData(initialValue));
+      .then(() => {setData(initialValue);window.location.reload();});
+    // props.setShow(false);
   };
 
   return (

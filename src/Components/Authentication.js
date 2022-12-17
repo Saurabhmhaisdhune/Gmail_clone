@@ -30,7 +30,6 @@ function Authentication() {
         alert("Invalid Credentials");
       } else{
       const user = await data.json();
-      console.log(user.token);
       localStorage.setItem("token",user.token);
       navigate("/home");
   }
