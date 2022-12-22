@@ -29,8 +29,10 @@ function Compose(props) {
           },
         }
       )
-      .then(() => {setData(initialValue);window.location.reload();});
-    // props.setShow(false);
+      .then(() => {
+        setData(initialValue);
+      });
+    props.setShow(false);
   };
 
   return (

@@ -50,7 +50,12 @@ export default function Tabss({ setSelectedmail }) {
           <span className="tooltip-texts">Select</span>
         </div>
         <div>
-          <BsArrowClockwise className="BsArrowClockwise" />
+          <BsArrowClockwise
+            className="BsArrowClockwise"
+            onClick={() => {
+              getData();
+            }}
+          />
           <span className="tooltip-texts">Refresh</span>
         </div>
         <div>
