@@ -21,25 +21,20 @@ import { useNavigate } from "react-router-dom";
 export default function Tabss({ setSelectedmail }) {
   const navigate = useNavigate();
   const [value, setValue] = useState("1");
-
   const [mails, setMails] = useState([]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const getData = () => {
+  useEffect(() => {
     fetch("https://gmail-clone-xbb8.onrender.com/gmail_data")
       .then((response) => response.json())
       .then((data) => setMails(data));
-  };
+  });
   const handleDelete = (name) => {
     axios
       .delete("https://gmail-clone-xbb8.onrender.com/gmail_data/" + name)
-      .then((data) => getData());
   };
-  useEffect(() => {
-    getData();
-  }, []);
 
   return (
     <div className="tabs-radius">
@@ -52,9 +47,6 @@ export default function Tabss({ setSelectedmail }) {
         <div>
           <BsArrowClockwise
             className="BsArrowClockwise"
-            onClick={() => {
-              getData();
-            }}
           />
           <span className="tooltip-texts">Refresh</span>
         </div>
