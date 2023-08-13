@@ -6,7 +6,7 @@ import {useFormik} from 'formik';
 
 function Authentication() {
   const navigate = useNavigate();
-  const [submitbtn,setSubmitbtn]=useState('Sign in');
+  const [submitbtn,setSubmitbtn]=useState('Login');
  
 
   const formik=useFormik({
@@ -43,7 +43,7 @@ function Authentication() {
         <br />
         <label className="text1">One account. All of Google</label>
         <br />
-        <label className="text2">Sign in to open the Gmail</label>
+        <label className="text2">Login in to open the Gmail</label>
         <br />
 
       <div className="main-input-div">
@@ -81,7 +81,7 @@ function Authentication() {
           <div>
             <input type="checkbox" className="sign-in-checkbox" />
 
-            <label>Stay signed in</label>
+            <label>Stay loged in</label>
           </div>
 
           <div>

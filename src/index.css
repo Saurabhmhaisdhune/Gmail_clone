@@ -439,8 +439,8 @@ width: 300px;
 .main-input-div{
     height: 500px;
     width: 400px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: rgb(227, 227, 227);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    background-color: rgb(240, 240, 240);
     padding: 20px;
     text-align: center;
     margin-top: 20px;
@@ -486,6 +486,7 @@ width: 300px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     margin-top: 50px;
 }
 .checkbox-sign{
