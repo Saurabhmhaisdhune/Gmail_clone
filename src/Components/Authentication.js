@@ -85,7 +85,7 @@ function Authentication() {
           </div>
 
           <div>
-            <a href="https://support.google.com/mail/?hl=en#topic=7065107">
+            <a href="https://frolicking-crepe-37b4ea.netlify.app">
               Need help
             </a>
           </div>
